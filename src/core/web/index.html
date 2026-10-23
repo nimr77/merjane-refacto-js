@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="theme-color" content="#173d30">
+	<title>Merjane · Inventory, in season</title>
+	<link rel="stylesheet" href="/assets/main.css">
+	<script type="module" src="/assets/main.js"></script>
+</head>
+<body>
+	<a class="skip-link" href="#main">Skip to content</a>
+	<aside class="sidebar">
+		<a class="brand" href="#inventory"><span class="brand-mark">m.</span>merjane<span class="brand-dot">®</span></a>
+		<p class="workspace-label">AIN SEBAÂ WORKSPACE</p>
+		<nav aria-label="Main navigation">
+			<a href="#inventory" data-nav="inventory" aria-current="page"><span aria-hidden="true">▦</span> Inventory <span class="nav-count" id="total-products">00</span></a>
+			<a href="#orders" data-nav="orders"><span aria-hidden="true">▤</span> Orders <span class="nav-count" id="total-orders">00</span></a>
+		</nav>
+		<div class="sidebar-note"><span class="status-dot"></span> A little more in season.<p>Good products.<br>Thoughtfully managed.</p><span class="note-line"></span><small>MERJANE / INVENTORY DESK</small></div>
+		<div class="profile"><span class="avatar">AS</span><div><strong>Aïn Sebaâ</strong><small>Store workspace</small></div><span aria-hidden="true">↗</span></div>
+	</aside>
+	<div class="workspace">
+		<header class="topbar"><span>Workspace <span class="breadcrumb">/</span> <strong>Overview</strong></span><div><span class="live-dot"></span><span>Live inventory</span><button class="refresh" id="refresh" aria-label="Refresh inventory and orders">↻</button></div></header>
+		<main id="main">
+			<section class="hero" aria-labelledby="hero-title"><div><p class="eyebrow">THE MERJANE INVENTORY DESK</p><h1 id="hero-title">Everything in stock.<br><em>Nothing out of sight.</em></h1><p>A clearer view of your shelves, your seasons,<br class="desktop-break"> and everything ready for the next order.</p><a class="hero-link" href="#orders">Take care of orders <span>↗</span></a></div><div class="hero-art" aria-hidden="true"><span class="orbit orbit-one"></span><span class="orbit orbit-two"></span><span class="leaf leaf-one"></span><span class="leaf leaf-two"></span><span class="leaf leaf-three"></span><span class="hero-stamp">FRESH THINKING<br>EVERY DAY</span><span class="hero-coordinate">33.60° N / 7.53° W</span></div></section>
+			<div class="metrics"><article><span>Units on shelves</span><strong id="total-units">0</strong><small>Physical inventory</small></article><article><span>Needs a little attention</span><strong id="attention-count">00</strong><small>Restocking, expired or out of season</small></article><article class="metric-note"><span class="mini-flower" aria-hidden="true">✳</span><p>A well-stocked day<br>starts with a clear view.</p></article></div>
+			<section id="inventory-section" aria-labelledby="inventory-title"><div class="section-heading"><div><p class="eyebrow">YOUR SHELVES, AT A GLANCE</p><h2 id="inventory-title">The inventory <span id="product-count">0 products</span></h2></div><label class="search"><span aria-hidden="true">⌕</span><input id="search" type="search" placeholder="Find a product…" aria-label="Search products"></label></div>
+				<div class="filters" id="filters" role="group" aria-label="Filter products"><button data-filter="ALL" aria-pressed="true">All products</button><button data-filter="NORMAL" aria-pressed="false">Everyday</button><button data-filter="SEASONAL" aria-pressed="false">Seasonal</button><button data-filter="EXPIRABLE" aria-pressed="false">Fresh & expirable</button></div>
+				<p class="error" id="inventory-error" role="alert"></p><div class="product-grid" id="product-grid" aria-live="polite"></div>
+			</section>
+			<section id="orders-section" hidden aria-labelledby="orders-title"><div class="section-heading"><div><p class="eyebrow">FROM SHELF TO CUSTOMER</p><h2 id="orders-title">Ready for the next order.</h2></div></div><p class="section-copy">Process one unit per product. Availability rules are checked before stock is updated.</p><p class="error" id="orders-error" role="alert"></p><div id="order-list"></div></section>
+			<footer><span>Made for the everyday. Ready for every season.</span><span>MERJANE © 2026</span></footer>
+		</main>
+	</div>
+	<dialog id="product-detail" aria-label="Product details"></dialog>
+	<p id="announcement" class="sr-only" role="status"></p>
+</body>
+</html>

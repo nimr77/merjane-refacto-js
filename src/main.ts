@@ -1,5 +1,5 @@
 import {install as sourceMapSupport} from 'source-map-support';
-import {CONFIG} from './configuration/index.js';
+import {CONFIG} from './core/configuration/index.js';
 import {buildFastify} from './fastify.js';
 
 const main = async () => {
@@ -25,4 +25,3 @@ const main = async () => {
 };
 
 main(); // eslint-disable-line @typescript-eslint/no-floating-promises
-

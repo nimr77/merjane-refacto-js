@@ -1,14 +1,19 @@
 {
   "name": "nw",
   "version": "1.0.0",
-  "description": "",
+  "description": "Merjane inventory and order processing",
   "exports": "./main.js",
   "scripts": {
-    "dev": "cross-env CONFIG_PATH=\".env.dev\" pnpm drizzle:push && tsx watch src/main.ts",
+    "dev": "pnpm build:web && pnpm drizzle:push && cross-env CONFIG_PATH=.env.dev tsx watch src/main.ts",
+    "build:web": "esbuild src/core/web/main.ts --bundle --format=esm --target=es2022 --outdir=dist/web",
+    "build": "pnpm typecheck && pnpm build:web",
+    "start": "cross-env CONFIG_PATH=.env.dev tsx src/main.ts",
+    "demo": "pnpm drizzle:push && cross-env CONFIG_PATH=.env.dev tsx src/core/db/seed-demo.ts",
+    "typecheck": "tsc --noEmit",
     "test": "pnpm test:unit --run && pnpm test:integration --run",
     "test:unit": "vitest -c vitest.unit.config.ts",
     "test:integration": "cross-env CONFIG_PATH=\".env.test\" vitest -c vitest.integration.config.ts",
-    "drizzle:push": "cross-env CONFIG_PATH=\".env.dev\" drizzle-kit push --config src/db/drizzle.config.ts",
+    "drizzle:push": "cross-env CONFIG_PATH=\".env.dev\" drizzle-kit push --config src/core/db/drizzle.config.ts",
     "lint": "xo"
   },
   "type": "module",

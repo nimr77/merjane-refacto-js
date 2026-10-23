@@ -1,0 +1,13 @@
+export {type Product} from '../domain/models/product.js';
+export {type StockDecision} from '../domain/models/stock-decision.js';
+export {type StockNotification} from '../domain/models/stock-notification.js';
+export {ProductType} from '../domain/enums/product-type.js';
+export {StockNotificationType} from '../domain/enums/stock-notification-type.js';
+export {type InventoryRepository} from '../domain/repos/inventory-repository.js';
+export {processProduct} from '../domain/services/process-product.js';
+export {toProduct} from '../repo/product-mapper.js';
+export {InventoryState} from './state/inventory-state.js';
+export {ProductFilter, isProductFilter} from '../domain/enums/product-filter.js';
+export {type InventoryClientRepository} from '../domain/repos/inventory-client-repository.js';
+export {HttpInventoryRepository} from './impl/http-inventory-repository.js';
+export {INVENTORY_ROUTES} from '../domain/const/inventory-routes.js';
